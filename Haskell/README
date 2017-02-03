@@ -1,0 +1,58 @@
+Name:		Jaydeep Digambar Ingle
+B-Number:	B00671052
+Email:		jingle1@binghamton.edu
+
+-------------------------------------------------------------------------------
+Problems and their description
+-- Problem 1
+quadraticRoots :: Floating t => t -> t -> t -> (t, t)
+-> Returns quadratic roots
+
+-- Problem 2
+iterateFunction :: (a -> a) -> a -> [a]
+-> Returns infinite list by having a function and first value from the list
+
+-- Problem 3
+multiples n 
+-> Returns multiples of n by all the non-negative integers.
+
+-- Problem 4
+hailstones :: Integral a => a -> [a]
+-> Returns sequence of hailstone numbers
+
+-- Problem 5
+hailstonesLen :: Integral a => a -> Int
+-> Returns the length of hailstone sequence
+
+-- Problem 6
+sumAbsDiffs :: Num a => [a] -> a
+-> Returns the difference between the 2 consecutive elements
+
+-- Problem 7
+distances :: Floating b => (b, b) -> [(b, b)] -> [b]
+-> Returns the list containing the distance of each point in list
+
+-- Problem 8
+sumLengths :: Floating a => [(a, a)] -> a
+-> Returns the sum of all edges
+
+-- Problem 9
+occurrences s c =
+-> Returns the list of indices
+
+-- Tree Data Structure
+data Tree t = Leaf t
+            | Tree (Tree t) t (Tree t)
+
+-- Problem 10
+foldTree :: (t1 -> t -> t1 -> t1) -> (t -> t1) -> Tree t -> t1
+-> Performs operations on the leaves and nodes with the given functions
+
+-- Problem 11
+flattenTree :: Tree a -> [a]
+-> Returns the in-order traversal of the tree
+
+-- Problem 12
+catenateTreeLists :: Tree [a] -> [a]
+-> Concatenates all the lists returned by the flattenTree method
+-------------------------------------------------------------------------------
