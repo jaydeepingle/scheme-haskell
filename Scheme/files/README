@@ -1,0 +1,102 @@
+Name:		Jaydeep Digambar Ingle
+B-Number:	B00671052
+Email:		jingle1@binghamton.edu
+
+--------------------------------------------
+Description:
+
+fns.rkt contains all the functions and their definitions
+parser.rkt contains the grammar rule functions implementation
+
+1. Project - Recursive descent parser
+Grammar
+ugly-regexp -> regexp-rest t
+regexp-rest -> . regexp-rest | empty
+term -> term-rest f
+term-rest -> + term-rest | empty
+factor -> ( factor ) | * factor | chars
+chars -> s | , chars
+
+2. quadratic-roots
+b^2-4ac is considered as x
+2a is considered as y
+
+3. mul-list
+multiplies each element with the given value. Returns empty list in case of
+empty list is passed
+
+4. sum-lengths
+calculates the sum of all the nested lists
+
+5. poly-eval
+evaluates polynomial recursively
+
+6. poly-eval-horner
+uses tail recursion to evaluate polynomial using horner's method
+
+7. count-occurrences
+counts the occurrences recursively and within the sub lists too
+
+8. eval-arith
+checks the keywords / aliases and evaluates accordingly
+
+9. sum-lengths-tr
+uses tail recursion to sum up all the lengths of the nested list
+
+10. poly-eval-tr
+uses tail recursion to evaluate polynomial
+
+11. mul-lists
+makes use of map
+
+12. sum-lengths
+makes use of map and foldl
+
+note: accumulator varable is being used while evaluating the expressions using
+tail recursion
+
+------------------------------------------------------------
+
+Steps to run:
+ugly-regexp/parser.rkt FILENAME
+	OR
+ugly-regexp/parser.rkt -
+<input-strings-goes-here>
+
+Sample Input:
+chars(a, b) 
+* chars(,,)
+* chars(,)
+chars(a) + chars(b) . chars(c)
+chars(a) + (chars(b) . chars(c))
+chars(a) + (chars(b) . *chars(c)) 
+chars(a) + * * (chars(b) . chars(c))
+(chars(a,))
+(chars(a,)))
+chars(a,b,c) + ** *(chars(d,e,f) . chars(g,h))
+               chars(a,b,c)      .      *      chars(d,e,f)
+   chars(),),),,)
+chars(abc, d) 
+
+Output for the above inputs:
+[ab]
+sample.txt:2:11: syntax error at '<NL>', expecting '")"'
+[\,]*
+(([a]|[b])[c])
+([a]|(([b][c])))
+([a]|(([b][c]*)))
+([a]|(([b][c]))**)
+sample.txt:8:11: syntax error at '<NL>', expecting '")"'
+([a\)])
+([abc]|(([def][gh]))***)
+([abc][def]*)
+[\)\)\)\,]
+sample.txt:13:8: syntax error at 'b', expecting '")"'
+
+-----------------------------------------------------------------
+Running fns.rkt
+
+>racket
+>(load "fns.rkt")
+
+Call the respective functions
